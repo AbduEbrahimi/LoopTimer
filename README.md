@@ -18,7 +18,8 @@
 
 ## 🖼️ Screenshots
 
-*(Add a screenshot here later)*
+<img width="997" height="749" alt="looptimer" src="https://github.com/user-attachments/assets/87c08ab1-4b24-40a3-80dc-9db167d3dc11" />
+
 
 ---
 

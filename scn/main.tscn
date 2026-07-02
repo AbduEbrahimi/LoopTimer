@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://cbf7gmlsd6bg4"]
+
+[ext_resource type="Script" uid="uid://c5xxcyfy2navy" path="res://scn/main.gd" id="1_4hsr3"]
+[ext_resource type="Script" uid="uid://cgjv38e2w08ug" path="res://scn/line_edit_saat.gd" id="1_7rek1"]
+[ext_resource type="LabelSettings" uid="uid://ewmgx7h5vv4b" path="res://assets/font/time_show.tres" id="1_a14j1"]
+[ext_resource type="Shader" uid="uid://dwc05mo0ioeia" path="res://scn/gradiant_bg.gdshader" id="2_b6phj"]
+[ext_resource type="Texture2D" uid="uid://b7cac8e366r3c" path="res://assets/png/panel-border-030.png" id="2_gyckk"]
+[ext_resource type="Shader" uid="uid://mriwyseqr2u" path="res://scn/border.gdshader" id="3_nq6di"]
+[ext_resource type="AudioStream" uid="uid://bwwl7rcdebulb" path="res://assets/fx/start.ogg" id="7_vnkvy"]
+[ext_resource type="Texture2D" uid="uid://ca6qsqois1lgw" path="res://assets/png/icons8-github-logo-50.png" id="8_315pe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6b5j"]
+shader = ExtResource("2_b6phj")
+shader_parameter/color1 = Vector4(0.1, 0.2, 0.4, 1)
+shader_parameter/color2 = Vector4(0.3, 0.5, 0.7, 1)
+shader_parameter/color3 = Vector4(0.6, 0.7, 0.8, 1)
+shader_parameter/color4 = Vector4(0.8, 0.7, 0.6, 1)
+shader_parameter/color5 = Vector4(0.6, 0.4, 0.5, 1)
+shader_parameter/color6 = Vector4(0.2, 0.2, 0.3, 1)
+shader_parameter/speed = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6phj"]
+shader = ExtResource("3_nq6di")
+shader_parameter/color1 = Vector4(0, 0.56, 0.57, 0.25)
+shader_parameter/color2 = Vector4(0.9, 0.8, 0.2, 0.25)
+shader_parameter/color3 = Vector4(0.2, 0.1, 0.8, 0.25)
+shader_parameter/speed = 0.5
+
+[node name="main" type="Control" unique_id=481271200]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hsr3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1672924171]
+material = SubResource("ShaderMaterial_v6b5j")
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.5606681, 0.5689871, 1)
+
+[node name="border" type="NinePatchRect" parent="." unique_id=1068991278]
+modulate = Color(0, 0.46666667, 0.47843137, 0.30980393)
+texture_filter = 1
+material = SubResource("ShaderMaterial_b6phj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gyckk")
+region_rect = Rect2(1.15, 1.15, 45.5, 45.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1755818894]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -214.0
+offset_right = 255.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="HBox_time_text" type="HBoxContainer" parent="VBoxContainer" unique_id=2021034582]
+layout_mode = 2
+alignment = 1
+
+[node name="Label_saat" type="Label" parent="VBoxContainer/HBox_time_text" unique_id=582200889]
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("1_a14j1")
+
+[node name="Label_cama" type="Label" parent="VBoxContainer/HBox_time_text" unique_id=333059532]
+layout_mode = 2
+text = ":"
+label_settings = ExtResource("1_a14j1")
+
+[node name="Label_minet" type="Label" parent="VBoxContainer/HBox_time_text" unique_id=260431407]
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("1_a14j1")
+
+[node name="Label_cama2" type="Label" parent="VBoxContainer/HBox_time_text" unique_id=1843961829]
+layout_mode = 2
+text = ":"
+label_settings = ExtResource("1_a14j1")
+
+[node name="Label_secend" type="Label" parent="VBoxContainer/HBox_time_text" unique_id=1428541655]
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("1_a14j1")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=273807120]
+layout_mode = 2
+
+[node name="HBox_text" type="HBoxContainer" parent="VBoxContainer" unique_id=634549365]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, 10)
+theme_override_constants/separation = 45
+
+[node name="Label_huor" type="Label" parent="VBoxContainer/HBox_text" unique_id=659825043]
+layout_mode = 2
+text = "ساعت"
+
+[node name="Label_min" type="Label" parent="VBoxContainer/HBox_text" unique_id=1490078206]
+layout_mode = 2
+text = "دقیقه"
+
+[node name="Label_sce" type="Label" parent="VBoxContainer/HBox_text" unique_id=1578691923]
+layout_mode = 2
+text = "ثانیه"
+
+[node name="HBox_time" type="HBoxContainer" parent="VBoxContainer" unique_id=1505013618]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit_saat" type="SpinBox" parent="VBoxContainer/HBox_time" unique_id=1873408852]
+layout_mode = 2
+max_value = 24.0
+alignment = 1
+script = ExtResource("1_7rek1")
+
+[node name="LineEdit_dagigeh" type="SpinBox" parent="VBoxContainer/HBox_time" unique_id=1026135909]
+layout_mode = 2
+max_value = 59.0
+alignment = 1
+script = ExtResource("1_7rek1")
+
+[node name="LineEdit_chanieh" type="SpinBox" parent="VBoxContainer/HBox_time" unique_id=1720033366]
+layout_mode = 2
+max_value = 59.0
+alignment = 1
+script = ExtResource("1_7rek1")
+
+[node name="Button_start" type="Button" parent="VBoxContainer/HBox_time" unique_id=2120226183]
+custom_minimum_size = Vector2(143, 34)
+layout_mode = 2
+text = "   زمان را تنظیم کنید  "
+
+[node name="CheckBox_tekrar" type="CheckBox" parent="VBoxContainer/HBox_time" unique_id=200211756]
+layout_mode = 2
+text = "تکرار"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" unique_id=470652653]
+layout_mode = 2
+
+[node name="HBox_fast_time" type="HBoxContainer" parent="VBoxContainer" unique_id=2022027187]
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Button_1" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=371697698]
+layout_mode = 2
+text = "03:00"
+
+[node name="Button_3" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=1295367107]
+layout_mode = 2
+text = "05:00"
+
+[node name="Button_5" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=323322882]
+layout_mode = 2
+text = "10:00"
+
+[node name="Button_10" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=1039137074]
+layout_mode = 2
+text = "30:00"
+
+[node name="Button_15" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=1217255625]
+layout_mode = 2
+text = "01:00:00"
+
+[node name="Button_30" type="Button" parent="VBoxContainer/HBox_fast_time" unique_id=1194194956]
+layout_mode = 2
+text = "01:30:00"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=740208459]
+layout_mode = 2
+
+[node name="HBox_sound" type="HBoxContainer" parent="VBoxContainer" unique_id=1789521502]
+layout_mode = 2
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBox_sound" unique_id=1295134100]
+layout_mode = 2
+text = "صدای 1"
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBox_sound" unique_id=1189512479]
+layout_mode = 2
+text = "صدای 2"
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBox_sound" unique_id=324190646]
+layout_mode = 2
+text = "صدای 3"
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBox_sound" unique_id=1236767930]
+layout_mode = 2
+text = "صدای 4"
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBox_sound" unique_id=524165339]
+layout_mode = 2
+button_pressed = true
+text = "صدای 5"
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer" unique_id=1333349267]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1929825190]
+layout_mode = 2
+alignment = 1
+
+[node name="CheckBox_eng" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=1089049122]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_pressed = true
+text = "English"
+
+[node name="CheckBox_persian" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=213099542]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "فارسی"
+
+[node name="CheckBox_arabic" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=698035606]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "عربي"
+
+[node name="CheckBox_Spanish" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=723642176]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Española"
+
+[node name="CheckBox_Chinese" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=9102099]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "中国人"
+
+[node name="CheckBox_Portuguese" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=1460114803]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Português"
+
+[node name="Timer_count" type="Timer" parent="." unique_id=1579290251]
+
+[node name="Audio_fx" type="AudioStreamPlayer" parent="." unique_id=1195854965]
+
+[node name="Audio_start" type="AudioStreamPlayer" parent="." unique_id=1381494699]
+stream = ExtResource("7_vnkvy")
+
+[node name="Button_github" type="Button" parent="." unique_id=2137338541]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -32.0
+offset_right = 106.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "github.com/AbduEbrahimi/LoopTimer"
+mouse_default_cursor_shape = 2
+text = "A.Ebrahimi"
+icon = ExtResource("8_315pe")
+flat = true
+icon_alignment = 2
+
+[connection signal="value_changed" from="VBoxContainer/HBox_time/LineEdit_saat" to="." method="_on_line_edit_saat_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBox_time/LineEdit_dagigeh" to="." method="_on_line_edit_dagigeh_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBox_time/LineEdit_chanieh" to="." method="_on_line_edit_chanieh_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HBox_time/Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_15" to="." method="_on_button_15_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_fast_time/Button_30" to="." method="_on_button_30_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_sound/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_sound/CheckBox2" to="." method="_on_check_box_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_sound/CheckBox3" to="." method="_on_check_box_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_sound/CheckBox4" to="." method="_on_check_box_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBox_sound/CheckBox5" to="." method="_on_check_box_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_eng" to="." method="_on_check_box_eng_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_persian" to="." method="_on_check_box_persian_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_arabic" to="." method="_on_check_box_arabic_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_Spanish" to="." method="_on_check_box_spanish_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_Chinese" to="." method="_on_check_box_chinese_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CheckBox_Portuguese" to="." method="_on_check_box_portuguese_pressed"]
+[connection signal="timeout" from="Timer_count" to="." method="_on_timer_count_timeout"]
+[connection signal="pressed" from="Button_github" to="." method="_on_button_github_pressed"]

@@ -26,7 +26,7 @@
 ## 🚀 Download & Run
 
 ### Option 1: Download Pre-built Release (Windows)
-👉 **[Download the latest Windows release](https://github.com/AbduEbrahimi/LoopTimer/releases/latest)**
+👉 **[Download the latest Windows release](https://github.com/AbduEbrahimi/LoopTimer/releases)**
 
 Just download the `.exe` file and run it – no installation required!
 
@@ -40,12 +40,12 @@ Just download the `.exe` file and run it – no installation required!
 ---
 
 ## 🎮 How to Use
-Button	Action
-Start	Begins the countdown
-Stop	Pauses the timer
-Repeat Repeats the alarm at the same time as before.
-Sound Dropdown	Choose between 5 different alarm sounds
-After the timer reaches zero, it will automatically restart with the same time
+| Button | Action |
+|--------|--------|
+| **Start** | Begins the countdown |
+| **Stop** | Pauses the timer |
+| **Repeat** | Repeats the alarm at the same time as before |
+| **Sound Dropdown** | Choose between 5 different alarm sounds |
 
 ---
 
